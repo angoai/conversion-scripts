@@ -53,9 +53,9 @@ def ango_to_yolo(json_file_path, output_folder, data_dir=None):
                 width_norm = round(width / image_width, 6)
                 height_norm = round(height / image_height, 6)
                 
-                parts = [class_name, str(x_centre_norm), str(y_centre_norm), str(width_norm), str(height_norm), '\n']
+                parts = [class_id, str(x_centre_norm), str(y_centre_norm), str(width_norm), str(height_norm)]
                 
-                line = ' '.join(parts)
+                line = ' '.join(parts) + '\n'
                 line_list.append(line)
         
         #output_file_path = os.path.join(output_folder, external_id.split('.')[0] + '.txt')
